@@ -45,10 +45,25 @@ img {
 }
 
 .aplicadora-view, .images-view {
-  background-color: white;
   border-radius: 16px;
   width: 100%;
   height: 100%;
+}
+
+.aplicadora-view, .service-info, .photos-to-upload, .success-upload {
+  background-color: white;
+}
+
+.photos-to-upload__container {
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.service-info {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 .go-back-section {
@@ -66,6 +81,7 @@ img {
 
 .go-back__image {
   width: 45px;
+  user-select: none;
 }
 
 .go-back__text {
@@ -82,6 +98,7 @@ img {
 .search-section,
 .services-section {
   padding: 32px 16px;
+  height: 100%;
 }
 /*
 .search-section {
@@ -105,6 +122,7 @@ img {
   /*width: 100%;*/
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  min-width: 0;
 }
 
 .search-section__input-button {
@@ -130,6 +148,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 16px;
+  gap: 16px;
 }
 
 .services__data-container {
@@ -164,7 +183,6 @@ img {
   font-weight: bold;
   border: none;
   transition: background-color 0.5s ease;
-  white-space: nowrap;
   font-family: "Montserrat", sans-serif;
   user-select: none;
 }
@@ -186,19 +204,192 @@ img {
   font-weight: bold;
 }
 
-.main-section {
-}
-
 .images-view {
-
+  min-height: 80vh;
 }
 
+.service-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-info, .service-info__container {
+  padding: 16px;
+}
+
+.service-info__normal-text {
+  font-weight: bold;
+}
+
+.service-info__service-number {
+  font-size: 24px;
+}
+
+.photos-to-upload {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.photos-to-upload__title {
+  font-size: 20px;
+}
+
+.photos-to-upload__title, .photos-to-upload__subtitle {
+  text-align: center;
+  font-weight: bold;
+}
+
+.photos-to-upload__items__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 32px;
+}
+
+.photos-to-upload__item {
+  background-color: #F7F4FF;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.photos-to-upload__item-2 {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+}
+
+.photos-to-upload__item-2__text {
+  font-weight: 500;
+  text-align: center;
+  user-select: none;
+}
+
+.photos-to-upload__item-2__image {
+  width: 25px;
+  user-select: none;
+}
+
+.photos-to-upload__upload-button-container {
+  padding: 0 32px;
+}
+
+.photos-to-upload__upload-button, .success-upload__button {
+  width: 100%;
+  border-radius: 20px;
+  height: 38px;
+  border: none;
+  color: white;
+  background-color: #691aca;
+  font-family: "Montserrat", sans-serif;
+  user-select: none;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+}
+
+.photos-to-upload__upload-button:hover, .success-upload__button:hover {
+  background-color: rgba(105, 26, 202, 0.5);
+}
+
+.success-upload {
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.success-upload, .photos-to-upload {
+  min-height: 80vh;
+}
+
+.success-upload__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.success-upload__image {
+  user-select: none;
+  width: 80px;
+}
+
+.success-upload__title {
+  font-size: 24px;
+}
+
+.success-upload__subtitle {
+  font-size: 16px;
+}
+
+.success-upload__button-container {
+  width: 100%;
+  max-width: 360px;
+}
+
+.success-upload__button {
+  height: 48px;
+  font-size: 16px;
+  border-radius: 24px;
+  font-weight: bold;
+}
+
+/*
+<div>
+    <img class="success-upload__image" src="./success-green-icon.svg" alt="success-icon">
+    <h3 class="success-upload__title">Subida exitosa</h3>
+    <h4 class="success-upload__subtitle">Gracias por su tiempo</h4>
+    <div class="success-upload__button-container">
+        <button class="success-upload__button" type="button">
+            Volver al inicio
+        </button>
+    </div>
+</div>
+*/
+
+/*
+<div class="images-view">
+    <div class="service-info">
+        <div class="service-info__container">
+            <p class="service-info__normal-text">N° de servicio</p>
+            <h4 class="service-info__service-number">34254</h4>
+            <p class="service-info__normal-text">13 de agosto 2024</p>
+        </div>
+        <div class="go-back">
+            <img class="go-back__image" src="./flecha-atras.png" alt="flecha-para-ir-hacia-atras">
+            <p class="go-back__text">Atrás</p>
+        </div>
+    </div>
+    <div class="photos-to-upload">
+        <div class="photos-to-upload__header">
+            <h4 class="photos-to-upload__title">Sube fotos de tu servicio</h4>
+            <p class="photos-to-upload__subtitle">Agrega por lo menos 3 fotos</p>
+        </div>
+        <div class="photos-to-upload__items__body">
+            <div class="photos-to-upload__item">
+                <div class="photos-to-upload__item-2">
+                    <p class="photos-to-upload__item-2__text">Subir imágen</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+*/
 @media screen and (min-width: 768px) {
   .main-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 85vh;
-    padding-bottom: 32px;
+    height: 85vh;
   }
 
   .go-back-section {
@@ -206,20 +397,55 @@ img {
     justify-content: start;
     align-items: center;
   }
+
+  .images-view {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .main-section {
+    min-height: 40vh;
+  }
+
+  .success-upload, .photos-to-upload {
+    min-height: 95vh;
+  }
+
+  .photos-to-upload, .service-info, .success-upload {
+    border-radius: 16px;
+  }
+
+  .service-info {
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 16px;
+    max-width: 234px;
+    min-width: 234px;
+  }
+
+  .photos-to-upload {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
 }
 
 @media screen and (min-width: 992px) {
-  .aplicadora-view {
-    margin: 32px 64px;
-  }
-
   .main-section {
     /*
     display: grid;
     grid-template-columns: 1fr 1fr;
     */
-    padding: 32px 128px;
+    padding: 32px 48px;
   }
+
+  .services__button {
+    text-wrap: nowrap;
+  }
+
 }
 
 /*
